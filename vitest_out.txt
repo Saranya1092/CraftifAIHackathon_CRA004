@@ -1,0 +1,33 @@
+
+> safezone-ai-frontend@1.0.0 test
+> vitest run
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mD:/Hackathon/safezone-ai/frontend[39m
+
+ [31m❯[39m src/tests/StatCard.test.tsx [2m([22m[2m0 test[22m[2m)[22m
+ [31m❯[39m src/tests/EmptyState.test.tsx [2m([22m[2m0 test[22m[2m)[22m
+ [31m❯[39m src/tests/StatusBadge.test.tsx [2m([22m[2m0 test[22m[2m)[22m
+ [31m❯[39m src/tests/ConfirmDialog.test.tsx [2m([22m[2m0 test[22m[2m)[22m
+ [31m❯[39m src/tests/ErrorAlert.test.tsx [2m([22m[2m0 test[22m[2m)[22m
+ [32m✓[39m src/tests/api.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 164[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 5 [27m[22m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/tests/ConfirmDialog.test.tsx[2m [ src/tests/ConfirmDialog.test.tsx ][22m
+[31m[1m[7m FAIL [27m[22m[39m src/tests/EmptyState.test.tsx[2m [ src/tests/EmptyState.test.tsx ][22m
+[31m[1m[7m FAIL [27m[22m[39m src/tests/ErrorAlert.test.tsx[2m [ src/tests/ErrorAlert.test.tsx ][22m
+[31m[1m[7m FAIL [27m[22m[39m src/tests/StatCard.test.tsx[2m [ src/tests/StatCard.test.tsx ][22m
+[31m[1m[7m FAIL [27m[22m[39m src/tests/StatusBadge.test.tsx[2m [ src/tests/StatusBadge.test.tsx ][22m
+[31m[1mError[22m: Cannot find module '@testing-library/dom'
+Require stack:
+- D:\Hackathon\safezone-ai\frontend\node_modules\@testing-library\react\dist\pure.js[39m
+[90m [2m❯[22m Object.<anonymous> node_modules/@testing-library/react/dist/pure.js:[2m46:12[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯[22m[39m
+
+[2m Test Files [22m [1m[31m5 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (6)[39m
+[2m      Tests [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+[2m   Start at [22m 19:48:11
+[2m   Duration [22m 2.23s[2m (transform 134ms, setup 1.02s, collect 34ms, tests 164ms, environment 8.24s, prepare 1.00s)[22m
+

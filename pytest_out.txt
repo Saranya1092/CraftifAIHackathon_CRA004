@@ -1,0 +1,190 @@
+D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:208: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts =============================
+platform win32 -- Python 3.14.7, pytest-8.3.4, pluggy-1.7.0 -- D:\Hackathon\safezone-ai\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Hackathon\safezone-ai\backend
+configfile: pytest.ini
+plugins: anyio-4.7.0, asyncio-0.24.0, mock-3.14.0
+asyncio: mode=Mode.AUTO, default_loop_scope=None
+collecting ... collected 57 items
+
+safezone-ai\backend\tests\test_deduplication.py::TestCooldown::test_first_event_creates_incident PASSED [  1%]
+safezone-ai\backend\tests\test_deduplication.py::TestCooldown::test_second_event_within_cooldown_skipped PASSED [  3%]
+safezone-ai\backend\tests\test_deduplication.py::TestCooldown::test_event_after_cooldown_creates_incident PASSED [  5%]
+safezone-ai\backend\tests\test_deduplication.py::TestCooldown::test_different_zones_independent PASSED [  7%]
+safezone-ai\backend\tests\test_deduplication.py::TestCooldown::test_same_zone_independent_from_other PASSED [  8%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_center_inside_square PASSED [ 10%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_outside_square PASSED [ 12%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_on_boundary_treated_as_inside PASSED [ 14%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_corner_point PASSED [ 15%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_just_outside_edge PASSED [ 17%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_inside_triangle PASSED [ 19%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_outside_triangle PASSED [ 21%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_degenerate_polygon_returns_false PASSED [ 22%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_empty_polygon_returns_false PASSED [ 24%]
+safezone-ai\backend\tests\test_geometry.py::TestPointInPolygon::test_coords_to_tuples_conversion PASSED [ 26%]
+safezone-ai\backend\tests\test_health.py::test_health_returns_ok PASSED  [ 28%]
+safezone-ai\backend\tests\test_health.py::test_health_monitoring_fields PASSED [ 29%]
+safezone-ai\backend\tests\test_incidents.py::test_incidents_empty PASSED [ 31%]
+safezone-ai\backend\tests\test_incidents.py::test_get_nonexistent_incident PASSED [ 33%]
+safezone-ai\backend\tests\test_incidents.py::test_patch_incident_status PASSED [ 35%]
+safezone-ai\backend\tests\test_incidents.py::test_patch_invalid_status_rejected PASSED [ 36%]
+safezone-ai\backend\tests\test_incidents.py::test_incident_persistence PASSED [ 38%]
+safezone-ai\backend\tests\test_incidents.py::test_incident_pagination PASSED [ 40%]
+safezone-ai\backend\tests\test_incidents.py::test_incident_filter_by_status PASSED [ 42%]
+safezone-ai\backend\tests\test_incidents.py::test_csv_export PASSED      [ 43%]
+safezone-ai\backend\tests\test_incidents.py::test_analytics_summary PASSED [ 45%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_initial_state_not_connected PASSED [ 47%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_connect_sets_up_client PASSED [ 49%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_connect_failure_sets_error 
+-------------------------------- live log call --------------------------------
+ERROR    app.mqtt.mqtt_service:mqtt_service.py:47 MQTT connection failed: Connection refused
+PASSED                                                                   [ 50%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_on_connect_rc_zero_sets_connected PASSED [ 52%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_on_connect_rc_nonzero_sets_not_connected 
+-------------------------------- live log call --------------------------------
+WARNING  app.mqtt.mqtt_service:mqtt_service.py:64 MQTT connection refused rc=5
+PASSED                                                                   [ 54%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_on_disconnect_clears_connected 
+-------------------------------- live log call --------------------------------
+WARNING  app.mqtt.mqtt_service:mqtt_service.py:69 MQTT unexpected disconnect rc=1 – will auto-reconnect
+PASSED                                                                   [ 56%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_publish_incident_when_connected PASSED [ 57%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_publish_does_not_raise_when_disconnected 
+-------------------------------- live log call --------------------------------
+WARNING  app.mqtt.mqtt_service:mqtt_service.py:87 MQTT not connected – incident test-incident-id not published
+PASSED                                                                   [ 59%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_publish_does_not_raise_on_publish_error 
+-------------------------------- live log call --------------------------------
+ERROR    app.mqtt.mqtt_service:mqtt_service.py:110 MQTT publish error for incident test-incident-id: Publish failed
+PASSED                                                                   [ 61%]
+safezone-ai\backend\tests\test_mqtt.py::TestMQTTService::test_status_dict_structure PASSED [ 63%]
+safezone-ai\backend\tests\test_perception.py::TestSimulatedAdapter::test_simulated_yields_detections PASSED [ 64%]
+------------------------------ live log teardown ------------------------------
+ERROR    asyncio:base_events.py:1886 Task was destroyed but it is pending!
+task: <Task pending name='Task-109' coro=<<async_generator_athrow without __name__>()>>
+
+safezone-ai\backend\tests\test_perception.py::TestSimulatedAdapter::test_simulated_confidence_range PASSED [ 66%]
+------------------------------ live log teardown ------------------------------
+ERROR    asyncio:base_events.py:1886 Task was destroyed but it is pending!
+task: <Task pending name='Task-111' coro=<<async_generator_athrow without __name__>()>>
+
+safezone-ai\backend\tests\test_perception.py::TestSimulatedAdapter::test_simulated_bbox_normalised PASSED [ 68%]
+------------------------------ live log teardown ------------------------------
+ERROR    asyncio:base_events.py:1886 Task was destroyed but it is pending!
+task: <Task pending name='Task-113' coro=<<async_generator_athrow without __name__>()>>
+
+safezone-ai\backend\tests\test_perception.py::TestAdapterFactory::test_simulated_returns_simulated_adapter 
+-------------------------------- live log call --------------------------------
+WARNING  app.perception.adapter_factory:adapter_factory.py:23 Using SIMULATED perception adapter. Results are NOT real AI inference.
+PASSED                                                                   [ 70%]
+safezone-ai\backend\tests\test_perception.py::TestAdapterFactory::test_pipegen_returns_pipegen_adapter PASSED [ 71%]
+safezone-ai\backend\tests\test_perception.py::TestAdapterFactory::test_deepstream_alias_returns_pipegen_adapter PASSED [ 73%]
+safezone-ai\backend\tests\test_perception.py::TestAdapterFactory::test_unknown_adapter_raises PASSED [ 75%]
+safezone-ai\backend\tests\test_perception.py::TestPipeGenAdapterParser::test_parse_valid_frame PASSED [ 77%]
+safezone-ai\backend\tests\test_perception.py::TestPipeGenAdapterParser::test_low_confidence_filtered PASSED [ 78%]
+safezone-ai\backend\tests\test_perception.py::TestPipeGenAdapterParser::test_non_person_class_filtered PASSED [ 80%]
+safezone-ai\backend\tests\test_perception.py::TestPipeGenAdapterParser::test_empty_objects PASSED [ 82%]
+safezone-ai\backend\tests\test_perception.py::TestPipeGenAdapterParser::test_malformed_frame_returns_empty PASSED [ 84%]
+safezone-ai\backend\tests\test_zones.py::test_create_zone PASSED         [ 85%]
+safezone-ai\backend\tests\test_zones.py::test_list_zones_empty PASSED    [ 87%]
+safezone-ai\backend\tests\test_zones.py::test_list_zones_after_create PASSED [ 89%]
+safezone-ai\backend\tests\test_zones.py::test_update_zone PASSED         [ 91%]
+safezone-ai\backend\tests\test_zones.py::test_delete_zone PASSED         [ 92%]
+safezone-ai\backend\tests\test_zones.py::test_get_nonexistent_zone_returns_404 PASSED [ 94%]
+safezone-ai\backend\tests\test_zones.py::test_zone_with_too_few_vertices_rejected PASSED [ 96%]
+safezone-ai\backend\tests\test_zones.py::test_zone_with_invalid_coordinates_rejected PASSED [ 98%]
+safezone-ai\backend\tests\test_zones.py::test_zone_invalid_color_rejected PASSED [100%]
+
+============================== warnings summary ===============================
+safezone-ai\backend\.venv\Lib\site-packages\fastapi\routing.py:233: 30 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\fastapi\routing.py:233: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    is_coroutine = asyncio.iscoroutinefunction(dependant.call)
+
+safezone-ai\backend\.venv\Lib\site-packages\starlette\_utils.py:39: 34 warnings
+tests/test_incidents.py: 2 warnings
+tests/test_zones.py: 4 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\starlette\_utils.py:39: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    return asyncio.iscoroutinefunction(obj) or (callable(obj) and asyncio.iscoroutinefunction(obj.__call__))
+
+safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:179: 2329 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:179: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    return asyncio.iscoroutinefunction(obj) or inspect.isasyncgenfunction(obj)
+
+safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:450: 57 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:450: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    return asyncio.iscoroutinefunction(func)
+
+tests/test_deduplication.py::TestCooldown::test_first_event_creates_incident
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:1056: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    return asyncio.get_event_loop_policy()
+
+tests/test_health.py: 2 warnings
+tests/test_incidents.py: 9 warnings
+tests/test_mqtt.py: 3 warnings
+tests/test_perception.py: 3 warnings
+tests/test_zones.py: 9 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:773: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    _restore_event_loop_policy(asyncio.get_event_loop_policy()),
+
+tests/test_health.py: 2 warnings
+tests/test_incidents.py: 9 warnings
+tests/test_mqtt.py: 3 warnings
+tests/test_perception.py: 3 warnings
+tests/test_zones.py: 9 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:1028: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    asyncio.set_event_loop_policy(new_loop_policy)
+
+tests/test_health.py: 2 warnings
+tests/test_incidents.py: 9 warnings
+tests/test_mqtt.py: 3 warnings
+tests/test_perception.py: 3 warnings
+tests/test_zones.py: 9 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:1029: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    loop = asyncio.get_event_loop_policy().new_event_loop()
+
+tests/test_health.py: 2 warnings
+tests/test_incidents.py: 9 warnings
+tests/test_mqtt.py: 3 warnings
+tests/test_perception.py: 3 warnings
+tests/test_zones.py: 9 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:788: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    policy = asyncio.get_event_loop_policy()
+
+tests/test_health.py: 2 warnings
+tests/test_incidents.py: 9 warnings
+tests/test_mqtt.py: 3 warnings
+tests/test_perception.py: 3 warnings
+tests/test_zones.py: 9 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:833: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    policy = asyncio.get_event_loop_policy()
+
+tests/test_health.py: 2 warnings
+tests/test_incidents.py: 9 warnings
+tests/test_mqtt.py: 3 warnings
+tests/test_perception.py: 3 warnings
+tests/test_zones.py: 9 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:857: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    asyncio.set_event_loop_policy(previous_policy)
+
+tests/test_health.py: 2 warnings
+tests/test_incidents.py: 9 warnings
+tests/test_mqtt.py: 3 warnings
+tests/test_perception.py: 3 warnings
+tests/test_zones.py: 9 warnings
+  D:\Hackathon\safezone-ai\backend\.venv\Lib\site-packages\pytest_asyncio\plugin.py:869: DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16
+    policy = asyncio.get_event_loop_policy()
+
+tests/test_perception.py::TestSimulatedAdapter::test_simulated_yields_detections
+tests/test_perception.py::TestSimulatedAdapter::test_simulated_confidence_range
+tests/test_perception.py::TestSimulatedAdapter::test_simulated_bbox_normalised
+  C:\Users\ganes\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py:745: RuntimeWarning: coroutine method 'aclose' of 'SimulatedAdapter.stream' was never awaited
+    self._ready.clear()
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 57 passed, 2642 warnings in 0.66s ======================

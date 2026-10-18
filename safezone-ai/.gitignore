@@ -1,0 +1,30 @@
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/safezone.db
+backend/.env
+backend/pipegen_output/
+*.egg-info/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Test artefacts
+htmlcov/
+.coverage
+.pytest_cache/
+node_modules/
